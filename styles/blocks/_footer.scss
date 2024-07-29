@@ -1,0 +1,244 @@
+.footer {
+  background-color: var(--color-gray-alt);
+  padding-top: 40px;
+  padding-bottom: 26px;
+  &__inner {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px 0px;
+  }
+  &__copyright {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    &-licenses {
+      display: flex;
+      gap: 10px;
+      & img {
+        min-width: 39px;
+        height: 54px;
+      }
+    }
+    &-text {
+      max-width: 550px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      & p {
+        color: var(--color-gray);
+        font-size: 14px;
+        line-height: 22px;
+      }
+    }
+  }
+  &__info {
+    &-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--secondary-alt-color);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 15px;
+    }
+    &-list {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+  }
+  &__contraindications {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    display: flex;
+    flex-direction: column;
+    padding-right: 30px;
+    gap: 6px;
+    &-title {
+      margin-bottom: 0px;
+    }
+    &-text {
+      color: var(--color-gray);
+      font-size: 12px;
+      line-height: 20px;
+    }
+  }
+  &__extra {
+    padding-left: 30px;
+    border-left: 1px solid rgba(210, 210, 210, 0.6);
+    &-title {
+      font-weight: 700;
+      font-size: 20px;
+      background: -webkit-linear-gradient( 109.6deg, #188a8d 11.2%, #60dd8e 91.1% );
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 6px;
+    }
+    &-text {
+      font-size: 14px;
+      color: var(--color-gray);
+      line-height: 21px;
+    }
+  }
+}
+
+@include desktop {
+  .footer {
+    &__logo {
+      display: flex;
+      align-items: center;
+      & img {
+        max-width: 200px;
+      }
+    }
+    &__copyright {
+      gap: 24px;
+      &-text {
+        & p {
+          font-size: 13px;
+          line-height: 20px;
+        }
+      }
+    }
+  }
+}
+
+@include tablet {
+  .footer {
+    &__copyright {
+      gap: 20px;
+      &-text {
+        & p {
+          font-size: 12px;
+          line-height: 20px;
+        }
+      }
+    }
+    &__info {
+      &-title {
+        font-size: 11px;
+        margin-bottom: 14px;
+      }
+    }
+    &__contraindications {
+      padding-right: 28px;
+      &-title {
+        margin-bottom: 0px;
+      }
+      &-text {
+        color: var(--color-gray);
+        font-size: 10px;
+        line-height: 18px;
+      }
+    }
+    &__extra {
+      padding-left: 28px;
+      &-title {
+        font-size: 18px;
+      }
+      &-text {
+        font-size: 12px;
+        line-height: 19px;
+      }
+    }
+  }
+}
+
+@include phablet {
+  .footer {
+    padding-top: 30px;
+    &__inner {
+      gap: 0;
+    }
+    &__logo, &__info, &__copyright, &__contraindications, &__extra {
+      grid-column-start: 1;
+      grid-column-end: 4;
+    }
+    &__logo {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 26px;
+    }
+    &__copyright {
+      text-align: center;
+      flex-direction: column;
+      margin-bottom: 36px;
+    }
+    &__info {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 26px;
+    }
+    &__payments {
+      margin-bottom: 36px;
+    }
+    &__contraindications {
+      padding-right: 0px;
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    &__extra {
+      padding-top: 20px;
+      padding-left: 0px;
+      border-top: 1px solid rgba(210, 210, 210, 0.6);
+      border-left: none;
+      text-align: center;
+    }
+  }
+}
+
+@include mobile {
+  .footer {
+    padding-top: 26px;
+    padding-bottom: 20px;
+    &__logo {
+      margin-bottom: 16px;
+      & img {
+        max-width: 180px;
+      }
+    }
+    &__copyright {
+      gap: 18px;
+      margin-bottom: 28px;
+      &-text {
+        & p {
+          font-size: 10px;
+          line-height: 18px;
+        }
+      }
+    }
+    &__info {
+      &-title {
+        font-size: 10px;
+        margin-bottom: 12px;
+      }
+    }
+    &__payments {
+      margin-bottom: 30px;
+    }
+    &__contraindications {
+      margin-bottom: 20px;
+      gap: 12px;
+      &-title {
+        margin-bottom: 0px;
+      }
+      &-text {
+        font-size: 10px;
+        line-height: 18px;
+      }
+    } 
+    &__extra {
+      &-title {
+        font-size: 16px;
+      }
+      &-text {
+        font-size: 10px;
+        line-height: 18px;
+      }
+    }
+  }
+}

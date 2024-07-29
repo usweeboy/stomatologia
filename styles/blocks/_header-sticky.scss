@@ -1,0 +1,91 @@
+.header-sticky {
+  display: none;
+  position: fixed;
+  background-color: var(--color-light);
+  z-index: 999;
+  left: 0;
+  right: 0;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, .1);
+  outline: 1px solid rgba(255, 255, 255, 0.4);
+  outline-offset: -6px;
+  padding: 15px 0px;
+  animation: header-show var(--transition-duration) ease-in-out;
+  &.active {
+    display: block;
+  }
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__content {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+  &__logo {
+    & img {
+      max-width: 150px;
+    }
+  }
+  &__btn {
+    font-size: 11px;
+    padding: 22px 44px;
+    gap: 12px;
+  }
+}
+
+@keyframes header-show {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  } 
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@include desktop {
+  .header-sticky {
+    &__btn {
+      display: none;
+    }
+  }
+}
+
+@include tablet {
+  .header-sticky {
+    &__content {
+      gap: 30px;
+    }
+  } 
+}
+
+@include phablet {
+  .header-sticky {
+    padding: 13px 0px;
+    &__content {
+      gap: 15px;
+    }
+    &__logo {
+      & img {
+        max-width: 130px;
+      }
+    }
+  }
+}
+
+@include mobile {
+  .header-sticky {
+    padding: 10px 0px;
+    &__logo {
+      & img {
+        max-width: 105px;
+      }
+    }
+    &__content {
+      gap: 0px;
+    }
+  } 
+}
